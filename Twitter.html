@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+        <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"> -->
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            .container{  /*this is the main container, it contains 2 sub containers in a row form*/
+                display: flex;
+                flex-direction: column;
+            }
+
+
+            .parent{    /*this is the 1st sub container, that contains another sub containers in column form*/
+                /* border: 1px solid black; */
+                display: flex;
+                align-items: stretch; /*stretches the both divs to the bottom*/
+                height: 93vh;  /*makees sure that the parent covers 93% of the window*/
+                box-sizing: border-box;
+            }
+            .child1{      /*this is the 1st half of the parent-container*/
+                width: 50%;        /*it divides the parent into 2 equal parts*/
+                background:rgb(113, 201, 248); /*this is ithe background colour of child1*/
+                overflow: hidden;
+                position: relative;  /*the child item is positioned relative  to the parent container*/
+                display: flex;   /*dislay is set to flex so we can set the write-up in the center*/
+                justify-content: center;   /*moves list items to the center horizontally*/
+                align-items: center;      /*moves the list items to the center vertically*/
+            }
+            ul{
+                position: relative;       /*ensures that the position on the child1 is relative to the item ul*/
+                color: white;           /*gives the font a color white*/
+                font-size: 25px;
+                font-family: Segoe UI;
+                list-style-type: none;     /*removes the bullet of the unordered list*/
+                line-height: 4em;         /*gives spaces between  the lines*/
+                letter-spacing: 0.04em;   /*gives spaces between the letters*/
+                font-weight: 700;
+            }
+            .r-13gxpu9{          /*serves as the background image*/
+                position: absolute; /*the svg image is positioned absolute to the child1 */
+                right: -450px;       /*movves the svg image horizntally*/
+                top: -350px;         /*moves the svg image vertically*/
+                width: 100vw;        /*svg occupies the width of the child item*/
+                
+            }
+            
+            .child2{    /*this is the 2nd half of the parent*/
+                width: 50%;    
+                background: white;
+                display: flex;
+                flex-direction: column;    /*this makes the items appear in horizontal form*/
+            }
+            .formcontainer{     /*this is the sub of chiild2*/
+                display: flex;     /*display is set to flex as it arranges it in a column form*/
+                /* border: 1px solid black; */
+                width: 100%;
+                height: 100px;
+                position: relative;
+                margin-top: 20px;
+                justify-content: space-around;
+            }
+            .first{        /*the first column of the flex- formcontainer*/
+                width: 30%;
+                /* border: 1px solid red; */
+                background-color: #eee;
+                position: relative;
+                /* height: 100px; */
+                /* box-sizing: border-box;*/
+            }
+            .second{       /*the 2nd column of the flex- formcontainer*/
+                width: 30%;
+                /* border: 1px solid red; */
+                background-color: #eee;
+            }
+            .third{      /*the 3rd column of the flex- formcontainer*/
+                width: 15%;
+                /* border: 1px solid red; */
+            }
+            .no-outline{     /*this styles the placeholder*/
+                outline: none;
+                width: 100%;  /*ensures that the bottom border line stretches 100% of the width of the div-first*/
+                font-size: 25px;    /*font of the placeholder*/
+                padding: 11px 10px 10px 10px;
+                overflow: hidden;
+            }
+            input {        /*styles the outline of the placeholder*/
+                border-top-style: hidden;
+                border-right-style: hidden;
+                border-left-style: hidden;
+                border-bottom-style: groove;
+                background-color: inherit;
+            }
+            #email-label{
+                /* background-color: #eee; */
+                font-family: sans-serif;
+                font-size: 15px;
+                display: block;
+                padding: 10px 10px 0px 10px;
+                color: blue;
+            }
+            #pass{
+                font-family: sans-serif;
+                font-size: 15px;
+                color: blue;
+                display: block;
+                padding: 10px 10px 0px 10px;
+            }
+            button{
+                background-color: white;
+                font-size: 15px;
+                font-weight: bold;
+                font-family: sans-serif;
+                border-radius: 20px;
+                padding: 5px;
+                border: 2px solid blue;
+                color: blue;
+                width: 80px;
+                height: 40px;
+                margin-top: 25%;
+            }
+            button:hover{
+                background-color: skyblue;
+            }
+            #forgot{
+                margin-left: 48%;
+                margin-top: 8px;
+                font-size: 15px;
+            }
+            a:link{
+                text-decoration: none;
+            }
+            a:hover{
+                text-decoration: underline;
+            }
+            .other{
+                display: flex;
+                flex-direction: column;
+                /* justify-content: center; */
+                /* align-items: center; */
+                align-self: center;
+                /* border: 1px solid black; */
+                margin-left:auto;    /*sets it to the center from the left*/
+                margin-right: auto;      /*sets it to the center from the right*/
+                margin-top: 50px;
+                width: 340px;
+                height: 380px;
+            }
+            /* .other1{} */
+
+            .fab{
+                color: rgba(29,161,242,1.00);
+                font-size: 41px;
+                padding-bottom: 20px;
+            }
+            h1{
+                line-height: 1.31;
+                /* padding-bottom: 60px; */
+                font-family: Segoe UI;
+                box-sizing: border-box;
+            }
+            .other2{
+                font-family: Segoe UI;
+                font-weight: bold;
+                color: rgb(20, 23, 26);
+                font-size: 15px;
+                line-height: 1.31em;
+                margin-top: 59px;
+                margin-bottom: 15px;
+                box-sizing: border-box;
+            }
+            .button-button1{
+                background-color: rgb(29, 161, 242);
+                text-align: center;
+                max-width: 100%;
+                margin-bottom: 15px;
+                margin-top: 15px;
+                height: 37px;
+                color: white;
+                padding-top: 7px;
+                border-radius: 20px;
+            }
+
+            .button-button2{
+                background-color: rgb(241, 244, 247);
+                text-align: center;
+                max-width: 100%;
+                margin-bottom: 15px;
+                margin-top: -20px;
+                height: 37px;
+                color: rgb(29, 161, 242);
+                padding-top: 7px;
+                border-radius: 20px;
+                border: 2px solid rgb(29, 161, 242);
+            }
+
+            .child3{
+                width: 100%;
+                height: 7vh;
+                /* border: 1px solid red; */
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 15px;
+                padding-right: 15px;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                
+                /* color: rgb(101, 119, 134); */
+                /* overflow-wrap: break-word; */
+            }
+            footer{
+                /* padding-left: 50px; */
+                font-size: 13px;
+                display: flex;
+                box-sizing: border-box;
+                justify-content: center;   /*ensures that the items on the footer are centered*/
+                flex-wrap: wrap;
+                
+            }
+            .anchor{
+                color: black; /*changes theh color to black, Also know that the a selector affects the anchors here*/
+                padding-right: 10px;   /*gives the spacing between the anchor text*/
+            }
+            
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="parent">
+                <div class="child1">
+                    <svg viewBox="0 0 24 24" 
+                    class="r-13gxpu9 r-4qtqp9 r-yyyyoo r-1n7nint r-10m99ii r-u8s1d r-1n2wx2z r-1plcrui r-1l2rav9 r-lrvibr">
+                    <g>
+                    <path fill="rgba(29,161,242,1.00)" d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path></g></svg>
+                    
+                    <div>
+                        <ul>
+                            <li><i class="fa fa-search"></i> Follow your interests.</li>
+                            <li><i class="fa fa-user-friends"></i> Hear what people are talking about.</li>
+                            <li><i class="fa fa-comment"></i> Join the conversation.</li>
+                          </ul>  
+                    </div>
+                </div>
+                
+                <div class="child2">
+                    <form action="/https://twitter.com/sessions">
+                        <div class="formcontainer">
+                            <div class="first">
+                                <label for="username" id="email-label">Phone, email, or username</label>
+                                <input type="text" placeholder="" name="username" required class="no-outline">
+                            </div>
+    
+                            <div class="second">
+                                <label for="pwd" id="pass">Password</label>
+                                <br>
+                                <input type="password" id="pwd" name="pwd" required class="no-outline">
+                            </div>
+                            
+                            <div class="third">
+                                <button type="submit">Log in</button>
+                            </div>                    
+                        </div>
+    
+                        <div id="forgot">
+                            <a href="https://twitter.com/account/begin_password_reset">Forgot password?</a>
+                        </div>
+                    </form>
+    
+                    <div class="other">
+                        <div class="other1">
+                            <i class="fab fa-twitter"></i>
+                            <br>
+                            <h1>See what’s happening in the world right now</h1>
+                        </div>
+    
+                        <div class="other2">
+                            <p>Join Twitter today.</p>
+                            <a href="https://twitter.com/i/flow/signup">
+                            <div class="button-button1">Sign up</div>
+                            </a>
+                            <br>
+                            <a href="https://twitter.com/login" a target="_blank">
+                            <div class="button-button2">Log in</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            
+
+
+
+
+            <div class="child3">
+                <footer>
+                    <a href="https://about.twitter.com/" target="_blank" class="anchor">About</a>
+                    <a href="https://help.twitter.com/en" target="_blank" class="anchor">Help Center</a>
+                    <a href="https://twitter.com/en/tos" target="_blank" class="anchor">Terms</a>
+                    <a href="https://twitter.com/en/privacy" target="_blank" class="anchor">Privacy policy</a>
+                    <a href="https://help.twitter.com/en/rules-and-policies/twitter-cookies" target="_blank" class="anchor">Cookies</a>
+                    <a href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html"  target="_blank" class="anchor">Ads info</a>
+                    <a href="https://blog.twitter.com/" target="_blank" class="anchor">Blog</a>
+                    <a href="https://status.twitterstat.us/" target="_blank" class="anchor">Status</a>
+                    <a href="https://careers.twitter.com/" target="_blank" class="anchor">Jobs</a>
+                    <a href="https://about.twitter.com/en_us/company/brand-resources.html" target="_blank"class="anchor">Brand</a>
+                    <a href="https://ads.twitter.com/login?ref=gl-tw-tw-twitter-advertise" target="_blank" class="anchor">Advertise</a>
+                    <a href="https://marketing.twitter.com/na/en" target="_blank" class="anchor">Marketing</a>
+                    <a href="https://business.twitter.com/" target="_blank" class="anchor">Businesses</a>
+                    <a href="https://developer.twitter.com/en" target="_blank" class="anchor">Developers</a>
+                    <a href="https://twitter.com/i/directory/profiles" target="_blank" class="anchor">Directory</a>
+                    <a href="https://twitter.com/settings/account/personalization" target="_blank" class="anchor">Settings</a>
+                    <p>&copy; 2020 Twitter, Inc.</p>
+                </footer>
+            </div>
+
+            
+
+        </div>
+
+    </body>
+</html>
